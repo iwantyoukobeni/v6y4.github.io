@@ -10,4 +10,18 @@
     border: none;
     background-color: #007BFF;
     color: #fff;
+    transition: background-color 0.3s ease, opacity 0.3s ease;
 }
+
+.api-button:focus {
+    outline: none;
+}
+
+.api-button:hover {
+    background-color: #0056b3;
+}
+
+.api-button.clicked {
+    opacity: 0.6;
+}
+
