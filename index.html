@@ -1,68 +1,18 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	
-	<title>Waifu Ai</title>
-
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet"> 
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-	<link rel="stylesheet" type="text/css" href="style.css">
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js" defer></script>
+    <title>API Documentation</title>
 </head>
 <body>
-	<div class="container d-flex justify-content-center align-items-center h-100">
-		<div class="row">
-			<header class="text-center col-12">
-				<h1>Waifu Ai</h1>
-			</header>
-			<section class="text-center col-12">
-				<hr>
-				<a href="#" id="showMoreButton">
-					<button class="btn btn-dark btn-xl">Find Out More</button>
-				</a>
-			</section>
-			<div id="moreButtons" style="display: none;">
-				<!-- Placeholder for additional buttons -->
-			</div>
-			<section class="text-center col-12">
-				<a href="https://top.gg/bot/1124359043532718211/vote" target="_blank">
-					<button class="btn btn-success btn-xl mt-3">Vote on top.gg</button>
-				</a>
-			</section>
-			<div class="buffer col-12"></div>
-		</div>
-	</div>
-	<script>
-		document.addEventListener("DOMContentLoaded", function() {
-			const showMoreButton = document.getElementById("showMoreButton");
-			const moreButtonsContainer = document.getElementById("moreButtons");
-
-			showMoreButton.addEventListener("click", function(event) {
-				event.preventDefault();
-
-				// Create and append the additional buttons
-				const links = [
-					{ text: "GitHub", url: "https://github.com/v6y4/waifu-ai" },
-					{ text: "Tellonym", url: "https://tellonym.me/animesluts" },
-					{ text: "Website", url: "https://waifu-ai.carrd.co/" }
-				];
-
-				moreButtonsContainer.innerHTML = ""; // Clear existing buttons
-
-				links.forEach(link => {
-					const button = document.createElement("a");
-					button.href = link.url;
-					button.target = "_blank"; // Open link in a new tab
-					button.classList.add("btn", "btn-dark", "btn-xl", "mr-2");
-					button.textContent = link.text;
-					moreButtonsContainer.appendChild(button);
-				});
-
-				moreButtonsContainer.style.display = "block"; // Show the container
-			});
-		});
-	</script>
+    <header>
+        <button class="api-button" onclick="showEndpoint('hentai_v1')">hentaiv1</button>
+    </header>
+    <section id="hentai_v1" class="hidden">
+        <!-- Content for hentai_v1 endpoint goes here -->
+    </section>
 </body>
 </html>
