@@ -54,21 +54,13 @@
 
     # Check if the request was successful (status code 200)
     if response.status_code == 200:
-        # Parse the JSON response
+        // Parse the JSON response
         data = response.json();
         // Print the image URL
         console.log(data['image_url']);
     else:
         console.log(`Error: ${response.status_code}`);
     </code></pre>
-
-    <h3 class="clickable-text" onclick="toggleLinks()">Click me!</h3>
-
-    <div id="links-container" class="links-container">
-      <a href="https://discord.gg/UCFUhstXTf">support</a><br>
-      <a href="https://github.com/v6y4/waifu-ai">support</a><br>
-      <a href="https://discord.com/api/oauth2/authorize?client_id=1124359043532718211&permissions=8&scope=applications.commands%20bot">support</a>
-    </div>
 
     <h3>End of API Documentation Hentaiv1</h3>
 
@@ -78,4 +70,3 @@
     <script>hljs.initHighlightingOnLoad();</script>    
   </body>
 </html>
-
