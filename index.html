@@ -20,55 +20,48 @@
         }
 
         .links-container {
-            opacity: 0;
-            transition: opacity 0.5s ease-in-out;
-            margin-top: 20px; /* Add some margin so it's not directly below the clickable text */
+            display: none;
+            margin-top: 20px;
         }
 
         .show-links .links-container {
-            opacity: 1;
+            display: block;
+            animation: fade 1s;
         }
 
-        .clickable-text {
-            cursor: pointer;
-            text-decoration: underline;
-            color: inherit;
-            position: fixed;
-            left: 20px;
-            top: 50%;
-            transform: translateY(-50%);
+        @keyframes fade {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
         }
     </style>
-    <script type="text/javascript">
-        function toggleLinks() {
-            var linksContainer = document.getElementById("links-container");
-            linksContainer.classList.toggle("show-links");
-        }
-    </script>
 </head>
 
 <body>
-
     <h1>Hentaiv1</h1>
     <h3>API Documentation</h3>
 
     <h3>Making a Request</h3>
 
     <pre><code class="python">
-import requests
+        import requests
 
-# Make a request to your API endpoint
-response = requests.get('https://hentaiapiv1.pythonanywhere.com/random_hentai_image')
+        # Make a request to your API endpoint
+        response = requests.get('https://hentaiapiv1.pythonanywhere.com/random_hentai_image')
 
-# Check if the request was successful (status code 200)
-if response.status_code == 200:
-    # Parse the JSON response
-    data = response.json()
-    # Print the image URL
-    console.log(data['image_url']);
-else:
-    console.log(`Error: ${response.status_code}`);
-    </code></pre>
+        # Check if the request was successful (status code 200)
+        if response.status_code == 200:
+            # Parse the JSON response
+            data = response.json()
+            # Print the image URL
+            console.log(data['image_url']);
+        else:
+            console.log(`Error: ${response.status_code}`);
+        </code></pre>
 
     <h3 class="clickable-text" onclick="toggleLinks()">Click me!</h3>
 
@@ -83,27 +76,18 @@ else:
     <div id="app">
         <v-swagger :spec="spec" />
     </div>
+
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="https://unpkg.com/vue"></script>
     <script src="dist/v-swagger.umd.js"></script>
+
     <script type="text/javascript">
-        new Vue({
-            el: '#app',
-            data: {
-                spec: {
-                    host: "https://www.google.com",
-                    title: "Google Search",
-                    description: "Hello, API",
-                    opened: true,
-                    request: [{
-                        method: 'get',
-                        description: "Google Home",
-                        url: "/"
-                    }]
-                }
-            }
-        })
+        function toggleLinks() {
+            var linksContainer = document.getElementById("links-container");
+            linksContainer.classList.toggle("show-links");
+        }
     </script>
+
     <script>
         hljs.initHighlightingOnLoad();
     </script>
