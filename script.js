@@ -1,3 +1,4 @@
+<script>
 new Vue({
   el: '#app',
   methods: {
@@ -19,5 +20,7 @@ new Vue({
     }
   }
 })
+</script>
+
 
 
