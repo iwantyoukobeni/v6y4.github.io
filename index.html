@@ -62,7 +62,8 @@
         console.log(`Error: ${response.status_code}`);
     </code></pre>
 
-    <h3 class="clickable-text" onclick="toggleLinks()">Click me!</h3>
+    <h3 class="clickable-text" @click.stop="toggleLinks">Click me!</h3>
+
 
 
     <div id="links-container" class="links-container">
