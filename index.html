@@ -22,6 +22,7 @@
         .links-container {
             opacity: 0;
             transition: opacity 0.5s ease-in-out;
+            margin-top: 20px; /* Add some margin so it's not directly below the clickable text */
         }
 
         .show-links .links-container {
@@ -38,6 +39,12 @@
             transform: translateY(-50%);
         }
     </style>
+    <script type="text/javascript">
+        function toggleLinks() {
+            var linksContainer = document.getElementById("links-container");
+            linksContainer.classList.toggle("show-links");
+        }
+    </script>
 </head>
 
 <body>
@@ -63,7 +70,7 @@ else:
     console.log(`Error: ${response.status_code}`);
     </code></pre>
 
-    <h3 class="clickable-text" id="clickable-text">Click me!</h3>
+    <h3 class="clickable-text" onclick="toggleLinks()">Click me!</h3>
 
     <div id="links-container" class="links-container">
         <a href="https://discord.gg/UCFUhstXTf">support</a><br>
@@ -80,10 +87,6 @@ else:
     <script src="https://unpkg.com/vue"></script>
     <script src="dist/v-swagger.umd.js"></script>
     <script type="text/javascript">
-        document.getElementById('clickable-text').addEventListener('click', function () {
-            document.getElementById('links-container').classList.toggle('show-links');
-        });
-
         new Vue({
             el: '#app',
             data: {
