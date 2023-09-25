@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <title>Waifu</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet"
-          href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
     <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
     <style type="text/css">
         body {
@@ -34,14 +34,15 @@
         }
     </style>
 </head>
+
 <body style="background-image: url('https://www.1zoom.me/big2/479/293430-aliya06.jpg'); background-size: cover; background-repeat: no-repeat; background-attachment: fixed; background-position: center center;">
 
-<h1>Hentaiv1</h1>
-<h3>API Documentation</h3>
+    <h1>Hentaiv1</h1>
+    <h3>API Documentation</h3>
 
-<h3>Making a Request</h3>
+    <h3>Making a Request</h3>
 
-<pre><code class="python">
+    <pre><code class="python">
 import requests
 
 # Make a request to your API endpoint
@@ -55,47 +56,49 @@ if response.status_code == 200:
     console.log(data['image_url']);
 else:
     console.log(`Error: ${response.status_code}`);
-</code></pre>
+    </code></pre>
 
-<h3 class="clickable-text" @click="toggleLinks">Click me!</h3>
+    <h3 class="clickable-text" id="clickable-text">Click me!</h3>
 
-<div id="links-container" class="links-container">
-    <a href="https://discord.gg/UCFUhstXTf">support</a><br>
-    <a href="https://github.com/v6y4/waifu-ai">support</a><br>
-    <a href="https://discord.com/api/oauth2/authorize?client_id=1124359043532718211&permissions=8&scope=applications.commands%20bot">support</a>
-</div>
+    <div id="links-container" class="links-container">
+        <a href="https://discord.gg/UCFUhstXTf">support</a><br>
+        <a href="https://github.com/v6y4/waifu-ai">support</a><br>
+        <a href="https://discord.com/api/oauth2/authorize?client_id=1124359043532718211&permissions=8&scope=applications.commands%20bot">support</a>
+    </div>
 
-<h3>End of API Documentation Hentaiv1</h3>
+    <h3>End of API Documentation Hentaiv1</h3>
 
-<div id="app">
-    <v-swagger :spec="spec" />
-</div>
-<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-<script src="https://unpkg.com/vue"></script>
-<script src="dist/v-swagger.umd.js"></script>
-<script type="text/javascript">
-    new Vue({
-        el: '#app',
-        methods: {
-            toggleLinks() {
-                document.getElementById("links-container").classList.toggle("show-links");
+    <div id="app">
+        <v-swagger :spec="spec" />
+    </div>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://unpkg.com/vue"></script>
+    <script src="dist/v-swagger.umd.js"></script>
+    <script type="text/javascript">
+        document.getElementById('clickable-text').addEventListener('click', function () {
+            document.getElementById('links-container').classList.toggle('show-links');
+        });
+
+        new Vue({
+            el: '#app',
+            data: {
+                spec: {
+                    host: "https://www.google.com",
+                    title: "Google Search",
+                    description: "Hello, API",
+                    opened: true,
+                    request: [{
+                        method: 'get',
+                        description: "Google Home",
+                        url: "/"
+                    }]
+                }
             }
-        },
-        data: {
-            spec: {
-                host: "https://www.google.com",
-                title: "Google Search",
-                description: "Hello, API",
-                opened: true,
-                request: [{
-                    method: 'get',
-                    description: "Google Home",
-                    url: "/"
-                }]
-            }
-        }
-    })
-</script>
-<script>hljs.initHighlightingOnLoad();</script>
+        })
+    </script>
+    <script>
+        hljs.initHighlightingOnLoad();
+    </script>
 </body>
+
 </html>
