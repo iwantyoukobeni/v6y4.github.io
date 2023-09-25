@@ -1,27 +1,11 @@
-/* Add your CSS styles here */
-.hidden {
-    display: none;
+body {
+  margin: 0 auto;
+  max-width: 900px;
+  background-image: url('https://i.pinimg.com/736x/8f/bf/a0/8fbfa032c1832a070225e6bb5cac7f42--projects-watches.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center center;
 }
 
-.api-button {
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-    border: none;
-    background-color: #007BFF;
-    color: #fff;
-    transition: background-color 0.3s ease, opacity 0.3s ease;
-}
-
-.api-button:focus {
-    outline: none;
-}
-
-.api-button:hover {
-    background-color: #0056b3;
-}
-
-.api-button.clicked {
-    opacity: 0.6;
-}
 
