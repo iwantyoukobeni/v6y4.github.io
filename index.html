@@ -87,6 +87,30 @@ else:
 
     <h3>End of API Documentation animepicsv1</h3>
 
+    
+    <h1>Waifugifsv1</h1>
+    <h3>API Documentation</h3>
+
+   <h3>Making a Request</h3>
+
+    <pre><code class="python">
+    import requests
+
+response = requests.get('https://waifugifsv1.pythonanywhere.com/random_waifu_gif')
+
+if response.status_code == 200:
+    data = response.json()
+    image_url = data.get('image_url')
+    if image_url:
+        print(f'Random Hentai Image: {image_url}')
+    else:
+        print('Image URL not found in response')
+else:
+    print(f'Error: {response.status_code}')
+    </code></pre>
+
+    <h3>End of API Documentation waifugifsv1</h3>
+
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="https://unpkg.com/vue"></script>
     <script src="dist/v-swagger.umd.js"></script>
