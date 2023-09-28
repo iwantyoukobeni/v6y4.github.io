@@ -43,7 +43,7 @@
 
     <h1>Hentaiv1</h1>
     <h3>API Documentation</h3>
-
+    <h3>this api allows u to get hentai anime girls</h3>
    <h3>Making a Request</h3>
 
     <pre><code class="python">
@@ -66,7 +66,7 @@
     
     <h1>Animepicsv1</h1>
     <h3>API Documentation</h3>
-
+    <h3>this api allows you to get pics of anime</h3>
    <h3>Making a Request</h3>
 
     <pre><code class="python">
@@ -78,7 +78,7 @@ if response.status_code == 200:
     data = response.json()
     image_url = data.get('image_url')
     if image_url:
-        print(f'Random Hentai Image: {image_url}')
+        print(f'Random anime Image: {image_url}')
     else:
         print('Image URL not found in response')
 else:
@@ -90,7 +90,7 @@ else:
     
     <h1>Waifugifsv1</h1>
     <h3>API Documentation</h3>
-
+    <h3>this api allows u to get gifs of waifus</h3>
    <h3>Making a Request</h3>
 
     <pre><code class="python">
@@ -102,7 +102,7 @@ if response.status_code == 200:
     data = response.json()
     image_url = data.get('image_url')
     if image_url:
-        print(f'Random Hentai Image: {image_url}')
+        print(f'Random waifu gif: {image_url}')
     else:
         print('Image URL not found in response')
 else:
@@ -110,6 +110,26 @@ else:
     </code></pre>
 
     <h3>End of API Documentation waifugifsv1</h3>
+
+    h1>Animeclipsv1</h1>
+    <h3>API Documentation</h3>
+    <h3>this api allow u to get clips of anime</h3>
+   <h3>Making a Request</h3>
+
+    <pre><code class="python">
+    mport requests
+
+API_URL = "https://animeclipsv1.pythonanywhere.com/random_anime_clip"
+
+response = requests.get(API_URL)
+data = response.json()
+
+
+shortened_url = data['shortened_url']
+print(shortened_url)
+    </code></pre>
+
+    <h3>End of API Documentation animeclipsv1</h3>
 
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="https://unpkg.com/vue"></script>
