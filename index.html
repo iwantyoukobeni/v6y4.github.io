@@ -113,7 +113,7 @@ else:
 
     <h1>Animeclipsv1</h1>
     <h3>API Documentation</h3>
-    <h3>this api allow u to get clips of anime</h3>
+    <h3>this api allows u to get clips of anime</h3>
    <h3>Making a Request</h3>
 
     <pre><code class="python">
@@ -130,6 +130,26 @@ print(shortened_url)
     </code></pre>
 
     <h3>End of API Documentation animeclipsv1</h3>
+
+    <h1>Waifuapiv2</h1>
+    <h3>API Documentation</h3>
+    <h3>this api allows you to reach all of the apis above easier examples below (BEST VERSION)</h3>
+   <h3>Making a Request</h3>
+
+    <pre><code class="python">
+    import requests
+
+API_URL = "https://waifuapiv2.pythonanywhere.com/animeclips_v2" simply change the api to what you want pythonanywhere.com/waifugifs_v2 (all endpoints waifugifs_v2 animeclips_v2 animepics_v2 hentai_v2)
+
+response = requests.get(API_URL)
+data = response.json()
+
+
+shortened_url = data['shortened_url']
+print(shortened_url)
+    </code></pre>
+
+    <h3>End of API Documentation waifuapiv2 (best version)</h3>
 
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="https://unpkg.com/vue"></script>
