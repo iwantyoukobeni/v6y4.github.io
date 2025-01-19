@@ -1,57 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title></title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet"
-    href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
-    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>    
-    <style type="text/css">
-      body {
-        margin: 0 auto;
-        max-width: 900px; 
-        color: black;
-      }
+<head>
+  <title></title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>    
+  <style type="text/css">
+    body {
+      margin: 0 auto;
+      max-width: 900px; 
+      color: black;
+    }
 
-      .links-container {
-        opacity: 0;
-        transition: opacity 0.5s ease-in-out;
-      }
+    .hidden-audio {
+      display: none;
+    }
+  </style>
+  <script type="text/javascript">
+    window.addEventListener('load', () => {
+      const audio = document.getElementById('background-audio');
+      audio.play().catch(error => {
+        console.error('Audio playback was blocked:', error);
+      });
+    });
+  </script>
+</head>
+<body style="background-image: url('https://images7.alphacoders.com/731/thumb-1920-731218.png'); background-size: cover; background-repeat: no-repeat; background-attachment: fixed; background-position: center center;">
 
-      .show-links .links-container {
-        opacity: 1;
-      }
+  <audio autoplay class="hidden-audio" id="background-audio">
+    <source src="fall upon deaf ears (soma _ pr37).mp3" type="audio/mp3">
+    Your browser does not support the audio element.
+  </audio>
 
-      .clickable-text {
-        cursor: pointer;
-        text-decoration: underline;
-        color: inherit;
-        position: fixed;
-        left: 20px; 
-        top: 50%; 
-        transform: translateY(-50%);
-      }
-    </style>
-    <script type="text/javascript">
-      function toggleLinks() {
-        document.getElementById("links-container").classList.toggle("show-links");
-      }
-    </script>
-  </head>
-  <body style="background-image: url('https://images7.alphacoders.com/731/thumb-1920-731218.png'); background-size: cover; background-repeat: no-repeat; background-attachment: fixed; background-position: center center;">
-
-    
-<h3>i hate liars</h3>
-  <video width="720" height="1080" controls>
-    <source src="Worlds End Harem/1.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
-
-   ></iframe></div></div><div id="embed01"><audio autoplay="" class="hidden-audio"><source src="fall upon deaf ears (soma _ pr37).mp3" type="audio/mp3"> Your browser does not support the audio element. </audio><style> .hidden-audio { display: none; } </style></div></div></div>
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <script src="https://unpkg.com/vue"></script>
-    <script src="dist/v-swagger.umd.js"></script>
-    <script>hljs.initHighlightingOnLoad();</script>    
-  </body>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src="https://unpkg.com/vue"></script>
+  <script src="dist/v-swagger.umd.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>    
+</body>
 </html>
+
