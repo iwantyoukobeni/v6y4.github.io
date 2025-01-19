@@ -50,26 +50,6 @@
 </audio>
 
 
-<script>
-    document.addEventListener("mousemove", () => {
-        const audioElement = document.getElementById("cursor-audio");
-        const audioInfo = document.getElementById("audio-info");
-
-        if (audioElement.paused) {
-            audioElement.play();
-            audioInfo.style.display = "block";
-           
-        }
-    });
-
-    document.addEventListener("mouseleave", () => {
-        const audioElement = document.getElementById("cursor-audio");
-        const audioInfo = document.getElementById("audio-info");
-
-        audioElement.pause();
-        audioInfo.style.display = "none";
-    });
-</script>
 
 <h3>i hate liars</h3>
 
