@@ -17,44 +17,73 @@
             background-position: center center;
         }
 
-        .bio {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+        .image-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); 
+            gap: 10px;
             padding: 20px;
-            margin-top: 50px; /* Add some space from the top */
         }
 
-        .bio-text {
-            max-width: 50%;
+        .image-gallery img {
+            width: 100%; 
+            height: auto; 
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        h3 {
+            text-align: center;
             color: white;
+        }
+
+        .audio-info {
+            position: fixed;
+            top: 10px;
+            left: 10px;
+            background: rgba(255, 255, 255, 0.8);
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+            font-size: 14px;
+            display: none;
+        }
+
+        .clickable-text {
+            cursor: pointer;
+            text-decoration: underline;
+            color: inherit;
+            position: fixed;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .hidden-audio {
+            display: none;
+        }
+
+        /* Styling for the Instagram icon */
+        .social-icons img {
+            width: 40px; /* Set a small width */
+            height: 40px; /* Set a small height */
+            object-fit: cover; /* Ensure the icon retains its aspect ratio */
+            border-radius: 50%; /* Make the icon circular */
+            transition: transform 0.3s ease-in-out; /* Optional: Add hover effect */
+        }
+
+        .social-icons img:hover {
+            transform: scale(1.1); /* Slightly enlarge the icon on hover */
         }
 
         .gif-and-icons {
             display: flex;
+            flex-direction: column;
             align-items: center;
         }
 
         .gif-and-icons img {
-            max-width: 300px; /* Make sure the GIF is a reasonable size */
-            margin-right: 20px; /* Add space between GIF and icons */
-        }
-
-        .social-icons img {
-            width: 40px;
-            height: 40px;
-            object-fit: cover;
-            border-radius: 50%;
-            margin: 0 10px; /* Add space between the icons */
-            transition: transform 0.3s ease-in-out;
-        }
-
-        .social-icons img:hover {
-            transform: scale(1.1);
-        }
-
-        h3 {
-            color: white;
+            max-width: 100%; /* Ensures the GIF fits properly */
+            height: auto;
         }
     </style>
 </head>
@@ -67,14 +96,15 @@
             <p>things about me: I hate liars, I love music, memes, visual novels, and manga. he/him</p>
         </div>
 
-        <!-- GIF and Icons container -->
+        
         <div class="gif-and-icons">
             <!-- GIF -->
-            <img src="https://ibb.co/zfh46F0" alt="">
+            <img src="https://i.ibb.co/q1MrJCP/output-onlinegiftools.gif" alt="">
 
             <!-- Social Media Icons -->
             <div class="social-icons">
                 <a href="https://www.instagram.com/uwntu" target="_blank">
+                    <!-- Instagram Icon -->
                     <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram">
                 </a>
             </div>
@@ -108,5 +138,3 @@
     <script>hljs.initHighlightingOnLoad();</script>
     
 </body>
-</html>
-
