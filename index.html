@@ -82,16 +82,11 @@
         </div>
     </div>
 
-    <!-- New Audio Code -->
-    <div id="embed01">
-        <audio autoplay="" class="hidden-audio">
-            <source src="https://dl.dropbox.com/scl/fi/8kbal7su7w8zp0rz3unq1/fall-upon.mp3?rlkey=1bze5ez3wumkjelfx0kowo42f&amp;st=bk8zvtye&amp;dl=0" type="audio/mp3">
-            Your browser does not support the audio element.
-        </audio>
-        <style> 
-            .hidden-audio { display: none; } 
-        </style>
-    </div>
+    <!-- Audio Element -->
+    <audio id="background-audio">
+        <source src="https://dl.dropbox.com/scl/fi/8kbal7su7w8zp0rz3unq1/fall-upon.mp3?rlkey=1bze5ez3wumkjelfx0kowo42f&amp;st=bk8zvtye&amp;dl=0" type="audio/mp3">
+        Your browser does not support the audio element.
+    </audio>
 
     <div class="image-gallery">
         <img src="https://i.pinimg.com/736x/84/00/1b/84001b937da30287542600ac8c24f736.jpg" alt="">
@@ -112,10 +107,19 @@
         <img src="https://i.pinimg.com/736x/5d/dd/b2/5dddb21bc2e179f9fc35eadddcddcd3c.jpg" alt="">
     </div> 
 
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <script src="https://unpkg.com/vue"></script>
-    <script src="dist/v-swagger.umd.js"></script>
-    <script>hljs.initHighlightingOnLoad();</script>
-    
+    <script>
+        let audioPlayed = false;
+
+        // Play audio on the first cursor movement
+        document.addEventListener('mousemove', () => {
+            if (!audioPlayed) {
+                const audio = document.getElementById('background-audio');
+                audio.play().catch((error) => {
+                    console.error('Audio playback error:', error);
+                });
+                audioPlayed = true; // Prevent further calls
+            }
+        });
+    </script>
 </body>
 </html>
