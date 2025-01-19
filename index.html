@@ -42,13 +42,13 @@
 </head>
 <body style="background-image: url('https://images7.alphacoders.com/731/thumb-1920-731218.png'); background-size: cover; background-repeat: no-repeat; background-attachment: fixed; background-position: center center;">
 
-<h3>Interactive Audio Demo</h3>
 
-<div class="audio-info" id="audio-info"></div>
-<audio id="cursor-audio" class="hidden-audio">
-    <source src="fall upon deaf ears (soma _ pr37).mp3" type="audio/mp3">
-    Your browser does not support the audio element.
+
+<audio id="myAudio" autoplay>
+  <source src="fall upon deaf ears (soma _ pr37).mp3" type="audio/mp3">
+  Your browser does not support the audio element.
 </audio>
+
 
 <script>
     document.addEventListener("mousemove", () => {
@@ -58,7 +58,7 @@
         if (audioElement.paused) {
             audioElement.play();
             audioInfo.style.display = "block";
-            audioInfo.textContent = `Playing: fall_upon_deaf_ears.mp3`;
+           
         }
     });
 
@@ -72,6 +72,24 @@
 </script>
 
 <h3>i hate liars</h3>
+
+<script>
+  // Wait until the iframe content is fully loaded
+  document.getElementById('myIframe').onload = function() {
+    // Access the iframe's document
+    var iframe = document.getElementById('myIframe');
+    var iframeDocument = iframe.contentWindow.document;
+
+    // Find the audio element in the iframe
+    var audio = iframeDocument.getElementById('myAudio');
+
+    // Play the audio if it's found
+    if (audio) {
+      audio.play();
+    }
+  };
+</script>
+
 
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 <script src="https://unpkg.com/vue"></script>
