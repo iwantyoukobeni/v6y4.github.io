@@ -63,16 +63,70 @@
         video.hidden-video {
             display: none;
         }
+
+        /* Hidden Bio */
+        .bio {
+            display: none;
+            text-align: center;
+            color: white;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.6);
+            border-radius: 10px;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Bio Icon Container */
+        .bio-icon-container {
+            display: flex;
+            align-items: center;
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .bio-icon-container:hover {
+            transform: scale(1.1);
+        }
+
+        .bio-icon-container img {
+            width: 50px;   /* Image size */
+            height: 50px;  /* Image size */
+            object-fit: contain; /* Ensures the image is fully visible without clipping */
+        }
+
+        .bio-icon-text {
+            font-size: 18px;
+            color: black;  /* Changed the text color to black */
+            font-family: Arial, sans-serif;
+            margin-left: 10px;
+        }
     </style>
 </head>
 <body>
 
+    <!-- Bio Icon and Text -->
+    <div class="bio-icon-container" onclick="toggleBio()">
+        <img src="https://i.ibb.co/9s2G6Lg/Bio-Icon.png" alt="Bio Icon">
+        <span class="bio-icon-text">Bio</span>
+    </div>
+
+    <!-- Hidden Bio Section -->
     <div class="bio">
-        <!-- Bio Text -->
-        <div class="bio-text">
-            <h3>i hate liars</h3>
-            <p>things about me: I hate liars, I love music, memes, visual novels, and manga. he/him</p>
-        </div>
+        <h3>i hate liars</h3>
+        <p>Things about me: I hate liars, I love music, memes, visual novels, and manga. he/him</p>
 
         <div class="gif-and-icons">
             <!-- GIF -->
@@ -87,11 +141,11 @@
         </div>
     </div>
 
-    <!-- Hidden Video Element -->
-    <video class="hidden-video" id="background-video" loop>
-        <source src="unstablee.mp4" type="video/mp4">
-        Your browser does not support the video element.
-    </video>
+    <!-- Audio Player -->
+    <audio id="globalAudio" autoplay loop>
+        <source src="liar.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
 
     <div class="image-gallery">
         <img src="https://i.pinimg.com/736x/84/00/1b/84001b937da30287542600ac8c24f736.jpg" alt="">
@@ -112,19 +166,30 @@
         <img src="https://i.pinimg.com/736x/5d/dd/b2/5dddb21bc2e179f9fc35eadddcddcd3c.jpg" alt="">
     </div> 
 
+    <!-- Script to Ensure Autoplay -->
     <script>
-        let videoPlayed = false;
+        const audio = document.getElementById('globalAudio');
 
-        // Play video (and its audio) on the first cursor movement
-        document.addEventListener('mousemove', () => {
-            if (!videoPlayed) {
-                const video = document.getElementById('background-video');
-                video.play().catch(error => {
-                    console.error('Video playback error:', error);
-                });
-                videoPlayed = true; // Prevent further calls
+        // Ensure audio plays even if user interaction is required (e.g., mobile browsers)
+        document.body.addEventListener('click', () => {
+            if (audio.paused) {
+                audio.play();
             }
         });
+
+        const bio = document.querySelector('.bio');
+
+        function toggleBio() {
+            if (bio.style.display === 'none' || bio.style.display === '') {
+                bio.style.display = 'block';
+                if (audio.paused) {
+                    audio.play();
+                }
+            } else {
+                bio.style.display = 'none';
+            }
+        }
     </script>
 </body>
 </html>
+
