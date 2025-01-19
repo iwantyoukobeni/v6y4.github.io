@@ -58,6 +58,11 @@
             max-width: 100%;
             height: auto;
         }
+
+        /* Hide the video element */
+        video.hidden-video {
+            display: none;
+        }
     </style>
 </head>
 <body>
@@ -82,11 +87,11 @@
         </div>
     </div>
 
-    <!-- Audio Element -->
-    <audio id="background-audio">
-        <source src="unstable.mp3" type="audio/mp3">
-        Your browser does not support the audio element.
-    </audio>
+    <!-- Hidden Video Element -->
+    <video class="hidden-video" id="background-video" loop>
+        <source src="unstablee.mp4" type="video/mp4">
+        Your browser does not support the video element.
+    </video>
 
     <div class="image-gallery">
         <img src="https://i.pinimg.com/736x/84/00/1b/84001b937da30287542600ac8c24f736.jpg" alt="">
@@ -108,16 +113,16 @@
     </div> 
 
     <script>
-        let audioPlayed = false;
+        let videoPlayed = false;
 
-        // Play audio on the first cursor movement
+        // Play video (and its audio) on the first cursor movement
         document.addEventListener('mousemove', () => {
-            if (!audioPlayed) {
-                const audio = document.getElementById('background-audio');
-                audio.play().catch((error) => {
-                    console.error('Audio playback error:', error);
+            if (!videoPlayed) {
+                const video = document.getElementById('background-video');
+                video.play().catch(error => {
+                    console.error('Video playback error:', error);
                 });
-                audioPlayed = true; // Prevent further calls
+                videoPlayed = true; // Prevent further calls
             }
         });
     </script>
