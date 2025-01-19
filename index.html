@@ -36,43 +36,16 @@
             color: white;
         }
 
-        .audio-info {
-            position: fixed;
-            top: 10px;
-            left: 10px;
-            background: rgba(255, 255, 255, 0.8);
-            padding: 10px;
-            border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-            font-size: 14px;
-            display: none;
-        }
-
-        .clickable-text {
-            cursor: pointer;
-            text-decoration: underline;
-            color: inherit;
-            position: fixed;
-            left: 20px;
-            top: 50%;
-            transform: translateY(-50%);
-        }
-
-        .hidden-audio {
-            display: none;
-        }
-
-        /* Styling for the Instagram icon */
         .social-icons img {
-            width: 40px; /* Set a small width */
-            height: 40px; /* Set a small height */
-            object-fit: cover; /* Ensure the icon retains its aspect ratio */
-            border-radius: 50%; /* Make the icon circular */
-            transition: transform 0.3s ease-in-out; /* Optional: Add hover effect */
+            width: 40px;
+            height: 40px;
+            object-fit: cover;
+            border-radius: 50%;
+            transition: transform 0.3s ease-in-out;
         }
 
         .social-icons img:hover {
-            transform: scale(1.1); /* Slightly enlarge the icon on hover */
+            transform: scale(1.1);
         }
 
         .gif-and-icons {
@@ -82,7 +55,7 @@
         }
 
         .gif-and-icons img {
-            max-width: 100%; /* Ensures the GIF fits properly */
+            max-width: 100%;
             height: auto;
         }
     </style>
@@ -96,7 +69,6 @@
             <p>things about me: I hate liars, I love music, memes, visual novels, and manga. he/him</p>
         </div>
 
-        
         <div class="gif-and-icons">
             <!-- GIF -->
             <img src="https://i.ibb.co/q1MrJCP/output-onlinegiftools.gif" alt="">
@@ -104,21 +76,22 @@
             <!-- Social Media Icons -->
             <div class="social-icons">
                 <a href="https://www.instagram.com/uwntu" target="_blank">
-                    <!-- Instagram Icon -->
                     <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram">
                 </a>
             </div>
         </div>
     </div>
 
-    <iframe 
-    width="0" 
-    height="0" 
-    src="https://www.youtube.com/embed/GJPxRVg0hMQ?autoplay=1&loop=1&playlist=GJPxRVg0hMQ" 
-    frameborder="0" 
-    allow="autoplay">
-</iframe>
-
+    <!-- New Audio Code -->
+    <div id="embed01">
+        <audio autoplay="" class="hidden-audio">
+            <source src="https://dl.dropbox.com/scl/fi/8kbal7su7w8zp0rz3unq1/fall-upon.mp3?rlkey=1bze5ez3wumkjelfx0kowo42f&amp;st=dufcelcw&amp;dl=0" type="audio/mp3">
+            Your browser does not support the audio element.
+        </audio>
+        <style> 
+            .hidden-audio { display: none; } 
+        </style>
+    </div>
 
     <div class="image-gallery">
         <img src="https://i.pinimg.com/736x/84/00/1b/84001b937da30287542600ac8c24f736.jpg" alt="">
@@ -145,3 +118,4 @@
     <script>hljs.initHighlightingOnLoad();</script>
     
 </body>
+</html>
