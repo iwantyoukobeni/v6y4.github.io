@@ -17,62 +17,44 @@
             background-position: center center;
         }
 
-        .image-gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); 
-            gap: 10px;
+        .bio {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
             padding: 20px;
+            margin-top: 50px; /* Add some space from the top */
         }
 
-        .image-gallery img {
-            width: 100%; 
-            height: auto; 
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-        }
-
-        h3 {
-            text-align: center;
+        .bio-text {
+            max-width: 50%;
             color: white;
         }
 
-        .audio-info {
-            position: fixed;
-            top: 10px;
-            left: 10px;
-            background: rgba(255, 255, 255, 0.8);
-            padding: 10px;
-            border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-            font-size: 14px;
-            display: none;
+        .gif-and-icons {
+            display: flex;
+            align-items: center;
         }
 
-        .clickable-text {
-            cursor: pointer;
-            text-decoration: underline;
-            color: inherit;
-            position: fixed;
-            left: 20px;
-            top: 50%;
-            transform: translateY(-50%);
+        .gif-and-icons img {
+            max-width: 300px; /* Make sure the GIF is a reasonable size */
+            margin-right: 20px; /* Add space between GIF and icons */
         }
 
-        .hidden-audio {
-            display: none;
-        }
-
-        /* Styling for the Instagram icon */
         .social-icons img {
-            width: 40px; /* Set a small width */
-            height: 40px; /* Set a small height */
-            object-fit: cover; /* Ensure the icon retains its aspect ratio */
-            border-radius: 50%; /* Make the icon circular */
-            transition: transform 0.3s ease-in-out; /* Optional: Add hover effect */
+            width: 40px;
+            height: 40px;
+            object-fit: cover;
+            border-radius: 50%;
+            margin: 0 10px; /* Add space between the icons */
+            transition: transform 0.3s ease-in-out;
         }
 
         .social-icons img:hover {
-            transform: scale(1.1); /* Slightly enlarge the icon on hover */
+            transform: scale(1.1);
+        }
+
+        h3 {
+            color: white;
         }
     </style>
 </head>
@@ -85,7 +67,7 @@
             <p>things about me: I hate liars, I love music, memes, visual novels, and manga. he/him</p>
         </div>
 
-        
+        <!-- GIF and Icons container -->
         <div class="gif-and-icons">
             <!-- GIF -->
             <img src="https://ibb.co/zfh46F0" alt="">
@@ -93,7 +75,6 @@
             <!-- Social Media Icons -->
             <div class="social-icons">
                 <a href="https://www.instagram.com/uwntu" target="_blank">
-                    <!-- Instagram Icon -->
                     <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram">
                 </a>
             </div>
@@ -114,6 +95,11 @@
         <img src="https://i.pinimg.com/736x/df/9e/0d/df9e0df89282b7ff704f15e8a1ef27c5.jpg" alt=""> 
         <img src="https://i.pinimg.com/736x/58/69/ad/5869ade165606e796148e073e468fbcf.jpg" alt="">
         <img src="https://i.pinimg.com/736x/e7/b7/9a/e7b79aa2ab93525d61736f8dbba57eb4.jpg" alt="">
+        <img src="https://i.pinimg.com/736x/cc/9c/dd/cc9cdd9ad1fb75cd28fa6919e9a723eb.jpg" alt="">
+        <img src="https://i.pinimg.com/736x/30/b0/d7/30b0d73ef1510511880f49023466075d.jpg" alt="">
+        <img src="https://i.pinimg.com/736x/02/0a/bd/020abda56d7dcaa7e8a2291ad71918b7.jpg" alt="">
+        <img src="https://i.pinimg.com/736x/11/41/7d/11417d24b6e6bba0d99e02d1a39c0eee.jpg" alt=""> 
+        <img src="https://i.pinimg.com/736x/5d/dd/b2/5dddb21bc2e179f9fc35eadddcddcd3c.jpg" alt="">
     </div> 
 
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
@@ -123,3 +109,4 @@
     
 </body>
 </html>
+
