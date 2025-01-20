@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Settings</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        label {
+            font-weight: bold;
+            margin-bottom: 5px;
+            display: inline-block;
+        }
+
+        input[type="file"] {
+            margin-bottom: 10px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #333;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #555;
+        }
+
+        .profile-pic-preview {
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .logout-btn {
+            display: block;
+            width: 100%;
+            background-color: #e74c3c;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            margin-top: 20px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .logout-btn:hover {
+            background-color: #c0392b;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Settings</h1>
+
+        <!-- Profile Picture Section -->
+        <div class="profile-pic-preview">
+            <img id="profilePicPreview" src="https://via.placeholder.com/150" alt="Profile Picture" width="150">
+        </div>
+
+        <label for="profilePicUpload">Upload Profile Picture</label>
+        <input type="file" id="profilePicUpload">
+
+        <button onclick="saveProfilePic()">Save Profile Picture</button>
+
+        <!-- Logout Button -->
+        <button class="logout-btn" onclick="logout()">Logout</button>
+    </div>
+
+    <script>
+        // Load the current profile picture if exists
+        document.addEventListener("DOMContentLoaded", () => {
+            const storedProfilePic = localStorage.getItem("profilePic");
+            if (storedProfilePic) {
+                document.getElementById("profilePicPreview").src = storedProfilePic;
+            }
+        });
+
+        // Save Profile Picture
+        function saveProfilePic() {
+            const fileInput = document.getElementById('profilePicUpload');
+            const file = fileInput.files[0];
+
+            if (file) {
+                const reader = new FileReader();
+                reader.onloadend = () => {
+                    const profilePicUrl = reader.result;
+                    // Save the profile picture to localStorage (or backend)
+                    localStorage.setItem("profilePic", profilePicUrl);
+                    document.getElementById("profilePicPreview").src = profilePicUrl;
+                    alert('Profile picture updated!');
+                };
+                reader.readAsDataURL(file);
+            } else {
+                alert('Please choose a file to upload.');
+            }
+        }
+
+        // Logout function
+        function logout() {
+            // Clear any stored data on logout
+            localStorage.removeItem("profilePic");
+            alert('Logged out');
+            // Redirect to homepage (or login page)
+            window.location.href = 'index.html'; // Adjust according to your homepage URL
+        }
+    </script>
+
+</body>
+</html>
