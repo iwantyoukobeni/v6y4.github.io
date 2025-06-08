@@ -59,12 +59,12 @@
             height: auto;
         }
 
-        /* Hide the video element */
+        
         video.hidden-video {
             display: none;
         }
 
-        /* Hidden Bio */
+        
         .bio {
             display: none;
             text-align: center;
@@ -86,7 +86,7 @@
             }
         }
 
-        /* Bio Icon Container */
+        
         .bio-icon-container {
             display: flex;
             align-items: center;
@@ -102,14 +102,14 @@
         }
 
         .bio-icon-container img {
-            width: 50px;   /* Image size */
-            height: 50px;  /* Image size */
-            object-fit: contain; /* Ensures the image is fully visible without clipping */
+            width: 50px;   
+            height: 50px;  
+            object-fit: contain; 
         }
 
         .bio-icon-text {
             font-size: 18px;
-            color: black;  /* Changed the text color to black */
+            color: black;  
             font-family: Arial, sans-serif;
             margin-left: 10px;
         }
@@ -117,22 +117,22 @@
 </head>
 <body>
 
-    <!-- Bio Icon and Text -->
+    
     <div class="bio-icon-container" onclick="toggleBio()">
         <img src="https://i.ibb.co/9s2G6Lg/Bio-Icon.png" alt="Bio Icon">
         <span class="bio-icon-text">Bio</span>
     </div>
 
-    <!-- Hidden Bio Section -->
+    
     <div class="bio">
         <h3>i hate liars</h3>
         <p>Things about me: I hate liars, I love music, memes, visual novels, and manga. he/him</p>
 
         <div class="gif-and-icons">
-            <!-- GIF -->
+            
             <img src="https://i.ibb.co/q1MrJCP/output-onlinegiftools.gif" alt="">
 
-            <!-- Social Media Icons -->
+            
             <div class="social-icons">
                 <a href="https://www.instagram.com/uwntu" target="_blank">
                     <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram">
@@ -141,7 +141,7 @@
         </div>
     </div>
 
-    <!-- Audio Player -->
+    
     <audio id="globalAudio" autoplay loop>
         <source src="liar.mp3" type="audio/mpeg">
         Your browser does not support the audio element.
@@ -166,11 +166,11 @@
         <img src="https://i.pinimg.com/736x/5d/dd/b2/5dddb21bc2e179f9fc35eadddcddcd3c.jpg" alt="">
     </div> 
 
-    <!-- Script to Ensure Autoplay -->
+    
     <script>
         const audio = document.getElementById('globalAudio');
 
-        // Ensure audio plays even if user interaction is required (e.g., mobile browsers)
+        
         document.body.addEventListener('click', () => {
             if (audio.paused) {
                 audio.play();
